@@ -21,11 +21,12 @@ class CreateTest
             ],
         ]);
 
+        $candidateRedirectUri = 'http://'.$_SERVER['HTTP_HOST'].'/candidate-return';
         $response = $httpClient->request('POST', '/api/tests', [
             'json' => [
                 'role' => Database::findRole(),
                 'types' => ['ca2cfc8b-f2f9-4d5b-a293-925622f63ebb'],
-                'redirect_uri' => 'http://'.$_SERVER['HTTP_HOST'].'/candidate-return',
+                'redirect_uri' => $candidateRedirectUri,
             ],
         ]);
 
@@ -42,7 +43,7 @@ class CreateTest
 
         Database::storeTest([
             'id' => $data['data']['id'],
-            'url' => $data['data']['attributes']['url'],
+            'url' => $data['data']['attributes']['url'].'?redirect-uri='.urlencode($candidateRedirectUri),
         ]);
 
         echo 'Test is created<br>';

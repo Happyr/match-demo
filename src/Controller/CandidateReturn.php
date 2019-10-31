@@ -18,6 +18,6 @@ class CandidateReturn
         Database::storeCandidate($query['candidate-id']);
 
         echo 'Welcome back from doing the test. We saved the candidate id';
-        echo '<a href="/dashboard">Back to Dashboard</a>';
+        echo '<br><a href="/dashboard">Back to Dashboard</a>';
     }
 }
