@@ -1,0 +1,20 @@
+{
+    "name": "happyr/match-demo",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nyholm",
+            "email": "tobias.nyholm@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-client": "^4.3",
+        "symfony/dotenv": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
