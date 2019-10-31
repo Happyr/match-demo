@@ -41,8 +41,11 @@ class Database
         self::store('test', $test);
     }
 
-    public static function findMatch(string $candidateId): array
+    public static function findMatch(?string $candidateId): array
     {
+        if ($candidateId === null) {
+            return [];
+        }
         return self::fetch()['match'] ?? [];
     }
 

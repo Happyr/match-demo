@@ -10,6 +10,8 @@ use Symfony\Component\Dotenv\Dotenv;
 
 $url = $_SERVER['REQUEST_URI'];
 $urlPath = parse_url($url, PHP_URL_PATH);
+
+// A very simple router
 switch ($urlPath) {
     case '/':
     case '/step-1':
@@ -23,6 +25,15 @@ switch ($urlPath) {
         break;
     case '/candidate-return':
         (new \App\Controller\CandidateReturn())->run($url);
+        break;
+    case '/create-role':
+        (new \App\Controller\CreateRole())->run($url);
+        break;
+    case '/create-test':
+        (new \App\Controller\CreateTest())->run($url);
+        break;
+    case '/get-match':
+        (new \App\Controller\CreateMatch())->run($url);
         break;
     default:
         echo 'Page not found';

@@ -38,6 +38,7 @@ HTML;
         echo <<<HTML
 <h3>Candidate</h3>
 <p>Current candidate id: {$candidate}</p>
+<p>Here is the match of that candidate:</p>
 HTML;
 
         if (empty($match)) {
