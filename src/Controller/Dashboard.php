@@ -23,11 +23,11 @@ class Dashboard
 <h1>Dashboard</h1>
 <p>We assume that you have a valid access token. If you don't have that yet you will notice soon =)</p>
 
-<h3>Role</h3>
+<h2>Role</h2>
 <p>Current role id: {$role}</p>
 <a href="/create-role">Create new role</a>
 
-<h3>Test</h3>
+<h2>Test</h2>
 <p>Current test id: {$test['id']}</p>
 <a href="/create-test">Create new test</a>
 HTML;
@@ -36,7 +36,7 @@ HTML;
         }
 
         echo <<<HTML
-<h3>Candidate</h3>
+<h2>Candidate</h2>
 <p>Current candidate id: {$candidate}</p>
 <p>Here is the match of that candidate:</p>
 HTML;
@@ -46,5 +46,11 @@ HTML;
         } else {
             echo '<pre>'.json_encode($match, JSON_PRETTY_PRINT).'</pre>';
         }
+
+        echo <<<HTML
+<h2>Startpage</h2>
+<a href="/">Back to startpage</a>
+
+HTML;
     }
 }
