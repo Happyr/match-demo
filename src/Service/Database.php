@@ -43,9 +43,10 @@ class Database
 
     public static function findMatch(?string $candidateId): array
     {
-        if ($candidateId === null) {
+        if (null === $candidateId) {
             return [];
         }
+
         return self::fetch()['match'] ?? [];
     }
 

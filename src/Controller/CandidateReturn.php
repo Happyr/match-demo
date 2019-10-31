@@ -8,7 +8,6 @@ use App\Service\Database;
 
 /**
  * This controller is used when a candidate returns form a test.
- *
  */
 class CandidateReturn
 {
@@ -18,7 +17,7 @@ class CandidateReturn
 
         Database::storeCandidate($query['candidate-id']);
 
-        echo "Welcome back from doing the test. We saved the candidate id";
+        echo 'Welcome back from doing the test. We saved the candidate id';
         echo '<a href="/dashboard">Back to Dashboard</a>';
     }
 }

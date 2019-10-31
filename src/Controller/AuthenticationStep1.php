@@ -7,11 +7,10 @@ namespace App\Controller;
 use App\Service\AccessTokenManager;
 
 /**
- * This is the page where we start the authentication
+ * This is the page where we start the authentication.
  */
 class AuthenticationStep1
 {
-
     public function run($url)
     {
         echo <<<HTML

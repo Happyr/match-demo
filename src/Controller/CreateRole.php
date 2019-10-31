@@ -28,29 +28,30 @@ class CreateRole
             'headers' => [
                 'Content-Type' => 'application/vnd.api+json',
             ],
-            'json'=> [
-                'advert_title'=>'Funny receptionist',
-                'advert_body_text'=>'Long text',
-                'advert_body_html'=>'Long <b>text<\/b>',
-                'advert_link'=>'https://my-app.com/advert/123',
-                'description'=>'Short text',
-                'employment_duration'=> 1,
-                'role_category'=>$roleCategory,
-                'work_hours'=> 1,
-                'location'=> [
-                    'country'=>'SE',
-                    'region'=>'Stockholms län',
-                    'city'=>'Stockholm',
-                    'address'=>'Drottninggatan 7'
-                ]
-            ]
+            'json' => [
+                'advert_title' => 'Funny receptionist',
+                'advert_body_text' => 'Long text',
+                'advert_body_html' => 'Long <b>text<\/b>',
+                'advert_link' => 'https://my-app.com/advert/123',
+                'description' => 'Short text',
+                'employment_duration' => 1,
+                'role_category' => $roleCategory,
+                'work_hours' => 1,
+                'location' => [
+                    'country' => 'SE',
+                    'region' => 'Stockholms län',
+                    'city' => 'Stockholm',
+                    'address' => 'Drottninggatan 7',
+                ],
+            ],
         ]);
 
-        if ($response->getStatusCode() !== 201) {
+        if (201 !== $response->getStatusCode()) {
             echo 'Error when creating role:';
             echo '<br><br><code>'.$response->getContent(false).'</code><br><br>';
 
             echo '<a href="/">Back to Startpage</a>';
+
             return;
         }
 
