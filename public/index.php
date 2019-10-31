@@ -13,13 +13,13 @@ $urlPath = parse_url($url, PHP_URL_PATH);
 switch ($urlPath) {
     case '/':
     case '/step-1':
-        (new \App\Controller\Step1())->run($url);
+        (new \App\Controller\AuthenticationStep1())->run($url);
         break;
     case '/step-2':
-        (new \App\Controller\Step2())->run($url);
+        (new \App\Controller\AuthenticationStep2())->run($url);
         break;
     case '/dashboard':
-        (new \App\Controller\AuthenticatedDashboard())->run($url);
+        (new \App\Controller\Dashboard())->run($url);
         break;
     case '/candidate-return':
         (new \App\Controller\CandidateReturn())->run($url);

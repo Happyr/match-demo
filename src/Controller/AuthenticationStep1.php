@@ -9,16 +9,15 @@ use App\Service\AccessTokenManager;
 /**
  * This is the page where we start the authentication
  */
-class Step1
+class AuthenticationStep1
 {
 
     public function run($url)
     {
-        $html = <<<HTML
+        echo <<<HTML
 <h1>Match demo</h1>
 <p>The HTML is very limited and the application is poor. We are using minimal code just to demo stuff.</p>
 HTML;
-        echo $html;
 
         $authUrl = getenv('MATCH_BASE_URL').'/oauth/authorize?'.http_build_query([
             'response_type' => 'code',

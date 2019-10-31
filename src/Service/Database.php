@@ -11,7 +11,7 @@ class Database
 {
     private const STORAGE = '/var/cache/database.json';
 
-    public static function findRole()
+    public static function findRole(): ?string
     {
         return self::fetch()['role'] ?? null;
     }
@@ -21,17 +21,7 @@ class Database
         self::store('role', $id);
     }
 
-    public static function findTest()
-    {
-        return self::fetch()['test'] ?? null;
-    }
-
-    public static function storeTest(string $id): void
-    {
-        self::store('test', $id);
-    }
-
-    public static function findCandidate()
+    public static function findCandidate(): ?string
     {
         return self::fetch()['candidate'] ?? null;
     }
@@ -39,6 +29,26 @@ class Database
     public static function storeCandidate(string $id): void
     {
         self::store('candidate', $id);
+    }
+
+    public static function findTest(): array
+    {
+        return self::fetch()['test'] ?? ['id' => null];
+    }
+
+    public static function storeTest(array $test): void
+    {
+        self::store('test', $test);
+    }
+
+    public static function findMatch(string $candidateId): array
+    {
+        return self::fetch()['match'] ?? [];
+    }
+
+    public static function storeMatch(array $match): void
+    {
+        self::store('match', $match);
     }
 
     private static function store(string $key, $value): void

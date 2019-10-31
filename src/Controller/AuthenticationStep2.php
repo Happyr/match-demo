@@ -10,7 +10,7 @@ use Symfony\Component\HttpClient\HttpClient;
 /**
  * This is the page we return to when user is authenticated.
  */
-class Step2
+class AuthenticationStep2
 {
 
     public function run($url)
