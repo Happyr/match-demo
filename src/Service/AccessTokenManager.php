@@ -10,7 +10,8 @@ class AccessTokenManager
 
     public static function store(array $accessToken): void
     {
-        file_put_contents(self::getStoragePath(), json_encode($accessToken, JSON_PRETTY_PRINT));
+        $file = self::getStoragePath();
+        file_put_contents($file, json_encode($accessToken, JSON_PRETTY_PRINT));
     }
 
     public static function get(): array
@@ -25,8 +26,13 @@ class AccessTokenManager
         return json_decode($fileContent, true);
     }
 
+    public static function hasToken(): bool
+    {
+        return file_exists(self::getStoragePath());
+    }
+
     private static function getStoragePath()
     {
-        return realpath(dirname(__DIR__).'/..'.self::STORAGE);
+        return dirname(__DIR__).'/..'.self::STORAGE;
     }
 }
