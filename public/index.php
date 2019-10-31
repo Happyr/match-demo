@@ -6,7 +6,7 @@ include_once dirname(__DIR__).'/vendor/autoload.php';
 
 use Symfony\Component\Dotenv\Dotenv;
 
-(new Dotenv(false))->loadEnv(dirname(__DIR__).'/.env');
+(new Dotenv(true))->loadEnv(dirname(__DIR__).'/.env');
 
 $url = $_SERVER['REQUEST_URI'];
 switch ($url) {
