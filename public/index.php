@@ -18,8 +18,11 @@ switch ($urlPath) {
     case '/step-2':
         (new \App\Controller\Step2())->run($url);
         break;
-    case '/step-3':
-        (new \App\Controller\Step3())->run($url);
+    case '/dashboard':
+        (new \App\Controller\AuthenticatedDashboard())->run($url);
+        break;
+    case '/candidate-return':
+        (new \App\Controller\CandidateReturn())->run($url);
         break;
     default:
         echo 'Page not found';

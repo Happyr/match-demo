@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-class Step3
+/**
+ * This controller is used when a candidate returns form a test.
+ *
+ */
+class CandidateReturn
 {
     public function run($url)
     {

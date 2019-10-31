@@ -14,7 +14,7 @@ class AccessTokenManager
         file_put_contents($file, json_encode($accessToken, JSON_PRETTY_PRINT));
     }
 
-    public static function get(): array
+    public static function fetch(): array
     {
         $file = self::getStoragePath();
         if (!file_exists($file)) {

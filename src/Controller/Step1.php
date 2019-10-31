@@ -32,7 +32,7 @@ HTML;
         // TODO if we got an access token already, we can skip authentication
         if (AccessTokenManager::hasToken()) {
             echo '<p>You already have a token stored. It might still be valid, do you want to try?</p>';
-            echo '<a href="/step-3">Continue with existing token</a>';
+            echo '<a href="/dashboard">Continue with existing token</a>';
         }
     }
 }

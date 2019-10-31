@@ -42,6 +42,6 @@ class Step2
         AccessTokenManager::store($response->toArray());
 
         echo "We saved the access token to disk. Go to next step<br><br>";
-        echo '<a href="/step-3">Continue</a>';
+        echo '<a href="/dashboard">Continue</a>';
     }
 }
