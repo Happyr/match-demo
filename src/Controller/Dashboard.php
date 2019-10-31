@@ -29,7 +29,7 @@ class Dashboard
 
 <h3>Test</h3>
 <p>Current test id: {$test['id']}</p>
-<a href="/create-role">Create new test</a>
+<a href="/create-test">Create new test</a>
 HTML;
         if (!empty($test['url'])) {
             echo '<p>Send a candidate to this URL to ask them to "do the test": </p>'.$test['url'];
