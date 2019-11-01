@@ -36,13 +36,7 @@ class CreateMatch
             return;
         }
 
-        $response = $httpClient->request('GET', '/api/candidates/'.$candidateId.'/match?type=medium&role='.$role, [
-            'json' => [
-                'role' => Database::findRole(),
-                'types' => ['ca2cfc8b-f2f9-4d5b-a293-925622f63ebb'],
-                'redirect_uri' => 'http://'.$_SERVER['HTTP_HOST'].'/candidate-return',
-            ],
-        ]);
+        $response = $httpClient->request('GET',  '/api/candidates/'.$candidateId.'/match?type=medium&role='.$role);
 
         if (200 !== $response->getStatusCode()) {
             echo 'Error when getting match:';
