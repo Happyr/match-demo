@@ -29,6 +29,7 @@ class Database
     public static function storeCandidate(string $id): void
     {
         self::store('candidate', $id);
+        self::storeMatch([]);
     }
 
     public static function findTest(): array
