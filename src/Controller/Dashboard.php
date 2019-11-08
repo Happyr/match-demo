@@ -48,12 +48,14 @@ HTML;
         }
 
         echo <<<HTML
+<h2>Find request</h2>
+Send new Find request by <a href="/find">clicking here</a>.
+
+
 <h2>Reresh AccessToken</h2>
 If the token have expired, you may <a href="/refresh">refresh it</a>.
 
-HTML;
 
-        echo <<<HTML
 <h2>Startpage</h2>
 <a href="/">Back to startpage</a>
 

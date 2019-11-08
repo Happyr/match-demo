@@ -38,6 +38,9 @@ switch ($urlPath) {
     case '/get-match':
         (new \App\Controller\CreateMatch())->run($url);
         break;
+    case '/find':
+        (new \App\Controller\CreateFind())->run($url);
+        break;
     default:
         echo 'Page not found';
 }
