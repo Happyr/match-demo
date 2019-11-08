@@ -20,6 +20,9 @@ switch ($urlPath) {
     case '/step-2':
         (new \App\Controller\AuthenticationStep2())->run($url);
         break;
+    case '/refresh':
+        (new \App\Controller\AuthenticationRefresh())->run($url);
+        break;
     case '/dashboard':
         (new \App\Controller\Dashboard())->run($url);
         break;
