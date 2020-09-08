@@ -32,6 +32,9 @@ switch ($urlPath) {
     case '/create-role':
         (new \App\Controller\CreateRole())->run($url);
         break;
+    case '/download-role-category':
+        (new \App\Controller\DownloadRoleCategory())->run($url);
+        break;
     case '/create-test':
         (new \App\Controller\CreateTest())->run($url);
         break;

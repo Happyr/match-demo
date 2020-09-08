@@ -27,6 +27,9 @@ class Dashboard
 <p>Current role id: {$role}</p>
 <a href="/create-role">Create new role</a>
 
+<br><br>
+<a href="/download-role-category">Get all role categories</a>
+
 <h2>Test</h2>
 <p>Current test id: {$test['id']}</p>
 <a href="/create-test">Create new test</a>
@@ -52,7 +55,7 @@ HTML;
 Send new Find request by <a href="/find">clicking here</a>.
 
 
-<h2>Reresh AccessToken</h2>
+<h2>Refresh AccessToken</h2>
 If the token have expired, you may <a href="/refresh">refresh it</a>.
 
 
