@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Service\AccessTokenManager;
-use App\Service\Database;
 use Symfony\Component\HttpClient\HttpClient;
 
 class DownloadRoleCategory
@@ -23,7 +22,7 @@ class DownloadRoleCategory
             'auth_bearer' => AccessTokenManager::fetch()['access_token'] ?? '',
             'headers' => [
                 'Content-Type' => 'application/vnd.api+json',
-            ]
+            ],
         ]);
 
         if (200 !== $response->getStatusCode()) {

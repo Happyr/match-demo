@@ -8,7 +8,7 @@ use App\Service\AccessTokenManager;
 use Symfony\Component\HttpClient\HttpClient;
 
 /**
- * If we want to refresh tha access token
+ * If we want to refresh tha access token.
  */
 class AuthenticationRefresh
 {

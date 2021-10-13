@@ -36,7 +36,7 @@ class CreateMatch
             return;
         }
 
-        $response = $httpClient->request('GET',  '/api/candidates/'.$candidateId.'/match?type=medium&role='.$role);
+        $response = $httpClient->request('GET', '/api/candidates/'.$candidateId.'/match?type=medium&role='.$role);
 
         if (200 !== $response->getStatusCode()) {
             echo 'Error when getting match:';

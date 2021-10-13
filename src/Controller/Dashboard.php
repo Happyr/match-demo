@@ -17,7 +17,7 @@ class Dashboard
         $role = Database::findRole();
         $test = Database::findTest();
         $candidate = Database::findCandidate();
-        $match = Database::findMatch($candidate);
+        $match = null; //Database::findMatch($candidate);
 
         echo <<<HTML
 <h1>Dashboard</h1>

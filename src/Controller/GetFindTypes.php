@@ -5,34 +5,36 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Service\AccessTokenManager;
-use HappyrMatch\ApiClient\ApiClient;
-use HappyrMatch\ApiClient\Model\Find\FindType;
-use HappyrMatch\ApiClient\Model\Test\TestType;
+use Symfony\Component\HttpClient\HttpClient;
 
 class GetFindTypes
 {
     public function run($url)
     {
-        $apiClient = ApiClient::create(getenv('MATCH_BASE_URL'), getenv('MATCH_CLIENT_IDENTIFIER'), getenv('MATCH_CLIENT_SECRET'));
+        $httpClient = HttpClient::create([
+            'base_uri' => getenv('MATCH_BASE_URL'),
+            'auth_bearer' => AccessTokenManager::fetch()['access_token'] ?? '',
+            'headers' => [
+                'Accept' => 'application/vnd.api+json',
+                'Content-Type' => 'application/vnd.api+json',
+            ],
+        ]);
 
-        $token = AccessTokenManager::fetch();
+        $response = $httpClient->request('GET', '/api/find-types');
 
-        $apiClient->authenticate(json_encode($token));
-        try {
-            $findTypes = $apiClient->find()->getTypes();
-        } catch (\Throwable $e) {
-            echo $e->getMessage();
-        }
-        $newToken = $apiClient->getAccessToken();
-        if (null !== $newToken) {
-            AccessTokenManager::store(json_decode($newToken, true));
+        if (200 !== $response->getStatusCode()) {
+            echo 'Error when getting find types:';
+            echo '<br><br><code>'.$response->getContent(false).'</code><br><br>';
+
+            echo '<a href="/">Back to Startpage</a>';
+
+            return;
         }
 
-        echo '<h3>Got roles</h3>';
-        /** @var FindType $type */
-        foreach ($findTypes as $type) {
-            echo $type->getId().': '.$type->getName().'<br>';
-        }
+        echo '<h3>Got find types</h3>';
+
+        $data = $response->toArray()['data'];
+        echo '<pre>'.json_encode($data, JSON_PRETTY_PRINT).'</pre>';
 
         echo '<br><a href="/dashboard">Back to Dashboard</a>';
     }
