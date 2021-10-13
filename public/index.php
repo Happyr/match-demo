@@ -44,6 +44,12 @@ switch ($urlPath) {
     case '/find':
         (new \App\Controller\CreateFind())->run($url);
         break;
+    case '/find-types':
+        (new \App\Controller\GetFindTypes())->run($url);
+        break;
+    case '/test-types':
+        (new \App\Controller\GetTestTypes())->run($url);
+        break;
     default:
         echo 'Page not found';
 }

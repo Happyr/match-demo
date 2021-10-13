@@ -54,6 +54,12 @@ HTML;
 <h2>Find request</h2>
 Send new Find request by <a href="/find">clicking here</a>.
 
+<h2>Get all find types</h2>
+See all type of Find requests by <a href="/find-types">clicking here</a>.
+
+<h2>Get all test types</h2>
+See all type of tests by <a href="/test-types">clicking here</a>.
+
 
 <h2>Refresh AccessToken</h2>
 If the token have expired, you may <a href="/refresh">refresh it</a>.
